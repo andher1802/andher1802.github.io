@@ -1,7 +1,7 @@
 rmd_files: ["index.Rmd",
-"01-Week1.Rmd",
+"01-Lesson1.Rmd",
 ]
-
+  
 delete_merged_file: true
 output_dir: docs
 language:

@@ -13,10 +13,13 @@ site: bookdown::bookdown_site
 biblio-style: apalike
 ---
 
-# Prerequisites
+```{r, include=FALSE}
+library(knitr)
+library(dplyr)
+library(kableExtra)
+```
 
-
-```{r eval=FALSE}
+```{r eval=FALSE, include=FALSE}
 install.packages("bookdown")
 # or the development version
 # devtools::install_github("rstudio/bookdown")
@@ -53,5 +56,5 @@ The goal of this course is to exemplify the role of ArcGIS in analysis of spatia
     + This is a class about the use of ArcGIS in landscape ecology related problems
     + Videos with detailed explanation about the topics.
 
-* Lab sessions tutorials and materials can be found [here!!!](https://maurosc3ner.github.io/6031gis_publichealth/)
+* Lab sessions tutorials and materials can be found [here!!!](https://andher1802.github.io/landscapegis/)
 
