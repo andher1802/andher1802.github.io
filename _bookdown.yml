@@ -1,3 +1,6 @@
+rmd_files: ["index.Rmd"
+]
+
   book_filename: "ArcGISLSE"
 delete_merged_file: true
 language:
