@@ -1,6 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "Yihui Xie"
+title: "Landscape Ecology and GIS"
+author: "Andres Hernandez M.Sc"
 date: "`r Sys.Date()`"
 bibliography:
 - book.bib
@@ -15,9 +15,6 @@ biblio-style: apalike
 
 # Prerequisites
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
-
-The **bookdown** package can be installed from CRAN or Github:
 
 ```{r eval=FALSE}
 install.packages("bookdown")
@@ -25,9 +22,6 @@ install.packages("bookdown")
 # devtools::install_github("rstudio/bookdown")
 ```
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
-
-To compile this example to PDF, you need XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <https://yihui.name/tinytex/>.
 
 ```{r include=FALSE}
 # automatically create a bib database for R packages
@@ -35,3 +29,29 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
+
+# Syllabus {-}
+
+## Contact information {-}
+
+```{r echo=FALSE, results='asis', warning=FALSE,out.width='100%'}
+prof <- data.frame(Instructor = '![](https://scholar.google.com/citations?view_op=view_photo&user=zMoJ8n4AAAAJ&citpid=7)',Info="Dr. Diego F. Cuadros. Assistant Professor of Health Geography and Disease Modeling, University of Cincinnati. **Office:** 401 C Braunstein Hall, Main Campus. **Email:** diego.cuadros@uc.edu")
+# kable(, caption = "Book",col.names = "")
+kable(prof) %>%
+  kable_styling(full_width = F,position = "left") %>%
+  column_spec(1, bold = T, border_right = T) %>%
+  column_spec(2, width = "30em")
+```
+
+
+## Content {-}
+
+The goal of this course is to exemplify the role of ArcGIS in analysis of spatial data in landscape ecology applications. At the beginning, we will review the fundamentals of the use of ArcMap interface, basic file structures and operations. Then, we will explore the capabilities of manipulating information in ArcGIS, and finally the use of ArcGIS in real world scenarios.
+
+* Format of the Lab sessions:
+    + This is a class about the use of ArcGIS in landscape ecology related problems
+    + Videos with detailed explanation about the topics.
+
+* Lab sessions tutorials and materials can be found [here!!!](https://maurosc3ner.github.io/6031gis_publichealth/)
+
