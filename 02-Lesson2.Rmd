@@ -1,0 +1,59 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+# ArcGIS Fundamentals: Spatial Analysis Examine Global Poverty Using UN Sustainable Development Goal {#week2}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This example was modified from the ESRI example "Examine Global Poverty Using UN Sustainable Development Goal". URL: https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/examine-global-poverty-using-un-sustainable-development-goals/
+
+## Download data from the canopy website
+
+IntroLab video
+
+**1. Download data from canopy**
+
++ Go to Canopy and download the zip file on the correponding week
++ Extract the content of the folder in your computer (Make sure that your folder is in a known location)
++ Check that you have 3 folders with the shapefiles of ChildPoverty, PovertyProportion, and WorldCountries.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xF7m5XtTLd4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Open ArcMap
+
+OpenArcMap
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Tj3Z4PJTphk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Load layers into ArcMap and Save a project in ArcMap
+
+OpenArcMap2
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/tazD7LNBq5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Explore layer properties and Conduct an Spatial Join
+
+SpatialJoin_1
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/8lhGlQKGl7M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Change appereance of a map
+
+Simbology
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BSA6IBQySV0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Relate two variables in a bivariate map
+
+Bivariate
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qtS2-ZttkLI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Set map in the layout and adding legend
+
+SetMap
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/sD2sfqe-g8Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
