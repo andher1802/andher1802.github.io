@@ -25,7 +25,7 @@
 <meta name="author" content="Andres Hernandez M.Sc">
 
 
-<meta name="date" content="2020-03-19">
+<meta name="date" content="2020-03-28">
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -75,11 +75,15 @@
 <li class="chapter" data-level="1.1" data-path="week1.html"><a href="week1.html#setup"><i class="fa fa-check"></i><b>1.1</b> Setup</a></li>
 <li class="chapter" data-level="1.2" data-path="week1.html"><a href="week1.html#arcgis-basics"><i class="fa fa-check"></i><b>1.2</b> ArcGIS Basics</a></li>
 <li class="chapter" data-level="1.3" data-path="week1.html"><a href="week1.html#basic-files-and-first-project"><i class="fa fa-check"></i><b>1.3</b> Basic files and first project</a></li>
+<li class="chapter" data-level="1.4" data-path="week1.html"><a href="week1.html#chapter-material"><i class="fa fa-check"></i><b>1.4</b> Chapter Material</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="week2.html"><a href="week2.html"><i class="fa fa-check"></i><b>2</b> ArcGIS Fundamentals: Spatial Analysis Examine Global Poverty Using UN Sustainable Development Goal</a><ul>
 <li class="chapter" data-level="2.1" data-path="week2.html"><a href="week2.html#download-data-from-the-canopy-website"><i class="fa fa-check"></i><b>2.1</b> Download data from the canopy website</a></li>
 <li class="chapter" data-level="2.2" data-path="week2.html"><a href="week2.html#open-arcmap"><i class="fa fa-check"></i><b>2.2</b> Open ArcMap</a></li>
-<li class="chapter" data-level="2.3" data-path="week2.html"><a href="week2.html#load-layers-into-arcmap-and-save-a-project-in-arcmap"><i class="fa fa-check"></i><b>2.3</b> Load layers into ArcMap and Save a project in ArcMap</a></li>
+<li class="chapter" data-level="2.3" data-path="week2.html"><a href="week2.html#load-layers-into-arcmap-and-save-a-project-in-arcmap"><i class="fa fa-check"></i><b>2.3</b> Load layers into ArcMap and Save a project in ArcMap</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="week2.html"><a href="week2.html#open-a-shapefile-in-arcmap"><i class="fa fa-check"></i><b>2.3.1</b> Open a shapefile in ArcMap</a></li>
+<li class="chapter" data-level="2.3.2" data-path="week2.html"><a href="week2.html#save-a-project-in-arcmap"><i class="fa fa-check"></i><b>2.3.2</b> Save a project in Arcmap</a></li>
+</ul></li>
 <li class="chapter" data-level="2.4" data-path="week2.html"><a href="week2.html#explore-layer-properties-and-conduct-an-spatial-join"><i class="fa fa-check"></i><b>2.4</b> Explore layer properties and Conduct an Spatial Join</a></li>
 <li class="chapter" data-level="2.5" data-path="week2.html"><a href="week2.html#change-appereance-of-a-map"><i class="fa fa-check"></i><b>2.5</b> Change appereance of a map</a></li>
 <li class="chapter" data-level="2.6" data-path="week2.html"><a href="week2.html#relate-two-variables-in-a-bivariate-map"><i class="fa fa-check"></i><b>2.6</b> Relate two variables in a bivariate map</a></li>
@@ -107,9 +111,13 @@
             <section class="normal" id="section-">
 <div id="week2" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> ArcGIS Fundamentals: Spatial Analysis Examine Global Poverty Using UN Sustainable Development Goal</h1>
-<p>This example was modified from the ESRI example “Examine Global Poverty Using UN Sustainable Development Goal”. URL: <a href="https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/examine-global-poverty-using-un-sustainable-development-goals/" class="uri">https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/examine-global-poverty-using-un-sustainable-development-goals/</a></p>
+<p>This example was modified from the ESRI example “Examine Global Poverty Using UN Sustainable Development Goal”. URL: <a href="https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/examine-global-poverty-using-un-sustainable-development-goals/">Reference link</a></p>
 <div id="download-data-from-the-canopy-website" class="section level2">
 <h2><span class="header-section-number">2.1</span> Download data from the canopy website</h2>
+<ul>
+<li>You also can find the material for this tutorial in the following link:
+<a href="https://drive.google.com/drive/folders/1ENwVDYN5O2oIHFzKeLB_EFSEhWCl9yUK?usp=sharing">Chapter 2</a></li>
+</ul>
 <p>IntroLab video</p>
 <p><strong>1. Download data from canopy</strong></p>
 <ul>
@@ -122,36 +130,73 @@
 </div>
 <div id="open-arcmap" class="section level2">
 <h2><span class="header-section-number">2.2</span> Open ArcMap</h2>
-<p>OpenArcMap</p>
+<ul>
+<li>To open ArcMap go to the start menu and look for arcgis.</li>
+<li>Among all the programs under the arcgis tab, click on ArcMap and open the software.</li>
+</ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Tj3Z4PJTphk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </div>
 <div id="load-layers-into-arcmap-and-save-a-project-in-arcmap" class="section level2">
 <h2><span class="header-section-number">2.3</span> Load layers into ArcMap and Save a project in ArcMap</h2>
-<p>OpenArcMap2</p>
+<div id="open-a-shapefile-in-arcmap" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> Open a shapefile in ArcMap</h3>
+<ul>
+<li>Once we open ArcGIS and to add data to your project first close the open window.</li>
+<li>Go to add layer (the icon with the plus sign) and go to click om connect to folder icon.</li>
+<li>Choose the folder where your downloaded your data.</li>
+<li>Go to the folder that you selected, and click on the shapefile that you want to load.</li>
+<li>Repeat the process for the other two shapefiles.</li>
+</ul>
+</div>
+<div id="save-a-project-in-arcmap" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> Save a project in Arcmap</h3>
+<ul>
+<li>To save a project first go to the file menu and to the map document properties and check the box on store relative paths. This is important!!!</li>
+<li>Then go again to the file menu and click on save, choose a file name, location and then click on save.</li>
+</ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tazD7LNBq5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </div>
+</div>
 <div id="explore-layer-properties-and-conduct-an-spatial-join" class="section level2">
 <h2><span class="header-section-number">2.4</span> Explore layer properties and Conduct an Spatial Join</h2>
-<p>SpatialJoin_1</p>
+<ul>
+<li>To see the properties of each layer on the arcmap, right click on the layer that you want to explore and go to the open attribute table.</li>
+<li><p>Then you can explore the values and properties of the layer elements.</p></li>
+<li><p>To conduct an spatial joint, lets first define what is an spatial join. A Spatial join is a GIS operation that affixes data from one feature layer’s attribute table to another from a spatial perspective. Spatial joins begin by selecting a target feature and comparing it spatially to other feature layers</p></li>
+<li><p>To join two datasets: In ArcMap,right-click the layer to which you want to join attributes, point to Joins and Relates, and click Join. To join two spatial datasets, click the first drop-down arrow and click Join data from another layer based on spatial location.</p></li>
+<li><p>Another option is to go to the geoprocessing tab on the top of arcmap and click on search. Then search for spatial join operation and open the spatial join window.</p></li>
+<li><p>Select the target layer with the shapefile that will have the merged properties of the spatial join, and follow the instructions on the video. Remember to choose one_to_one and the option within the match option select Intersect.</p></li>
+</ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8lhGlQKGl7M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </div>
 <div id="change-appereance-of-a-map" class="section level2">
 <h2><span class="header-section-number">2.5</span> Change appereance of a map</h2>
-<p>Simbology</p>
+<ul>
+<li>Select the feature layer in the Contents pane.</li>
+<li>On the Appearance tab, in the Drawing group, click Symbology Symbology.</li>
+<li>In the Symbology pane, on the Vary symbology by attribute tab Vary symbology by attribute, expand the Color heading and do one of the following:</li>
+<li>Choose a numeric field from the Field menu to vary the symbol color.</li>
+<li>Write an expression to determine color values. Choose Custom from the Field menu, or click the Set an expression button Set an expression to open the Expression Builder dialog box.</li>
+<li>Select a color scheme. (When symbolizing polygon feature layers, you can modify the color of the polygon symbol fills or outlines (or both) by the color scheme.</li>
+<li>Click the Color scheme options button Color scheme options to choose the target for the color scheme. The target determines which symbol layers of the symbol are affected.</li>
+<li>If the source data has changed or been updated, click Refresh values Refresh to update the range of values.</li>
+<li>Check the Show legend check box to add a representation of the color variation to the layer’s legend in both the Contents pane and any legends placed on layouts.</li>
+<li>To remove the color variable or the normalization field, choose <none> from the Field or Normalization menus.</li>
+</ul>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BSA6IBQySV0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 </div>
 <div id="relate-two-variables-in-a-bivariate-map" class="section level2">
 <h2><span class="header-section-number">2.6</span> Relate two variables in a bivariate map</h2>
-<p>Bivariate
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qtS2-ZttkLI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p>To relate two layers in a bivariate map, follow the instructions on the video:</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/qtS2-ZttkLI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
 </div>
 <div id="set-map-in-the-layout-and-adding-legend" class="section level2">
 <h2><span class="header-section-number">2.7</span> Set map in the layout and adding legend</h2>
-<p>SetMap</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sD2sfqe-g8Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 

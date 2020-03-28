@@ -9,9 +9,12 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This example was modified from the ESRI example "Examine Global Poverty Using UN Sustainable Development Goal". URL: https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/examine-global-poverty-using-un-sustainable-development-goals/
+This example was modified from the ESRI example "Examine Global Poverty Using UN Sustainable Development Goal". URL: [Reference link](https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/examine-global-poverty-using-un-sustainable-development-goals/)
 
 ## Download data from the canopy website
+
++ You also can find the material for this tutorial in the following link:
+[Chapter 2](https://drive.google.com/drive/folders/1ENwVDYN5O2oIHFzKeLB_EFSEhWCl9yUK?usp=sharing)
 
 IntroLab video
 
@@ -25,35 +28,64 @@ IntroLab video
 
 ## Open ArcMap
 
-OpenArcMap
++ To open ArcMap go to the start menu and look for arcgis.
++ Among all the programs under the arcgis tab, click on ArcMap and open the software.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Tj3Z4PJTphk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Load layers into ArcMap and Save a project in ArcMap
 
-OpenArcMap2
+### Open a shapefile in ArcMap
+
++ Once we open ArcGIS and to add data to your project first close the open window. 
++ Go to add layer (the icon with the plus sign) and go to click om connect to folder icon.
++ Choose the folder where your downloaded your data.
++ Go to the folder that you selected, and click on the shapefile that you want to load.
++ Repeat the process for the other two shapefiles.
+
+### Save a project in Arcmap
+
++ To save a project first go to the file menu and to the map document properties and check the box on store relative paths. This is important!!!
++ Then go again to the file menu and click on save, choose a file name, location and then click on save.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/tazD7LNBq5M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Explore layer properties and Conduct an Spatial Join
 
-SpatialJoin_1
++ To see the properties of each layer on the arcmap, right click on the layer that you want to explore and go to the open attribute table. 
++ Then you can explore the values and properties of the layer elements.
+
++ To conduct an spatial joint, lets first define what is an spatial join. A Spatial join is a GIS operation that affixes data from one feature layer's attribute table to another from a spatial perspective. Spatial joins begin by selecting a target feature and comparing it spatially to other feature layers
+
++ To join two datasets: In ArcMap,right-click the layer to which you want to join attributes, point to Joins and Relates, and click Join. To join two spatial datasets, click the first drop-down arrow and click Join data from another layer based on spatial location.
+
++ Another option is to go to the geoprocessing tab on the top of arcmap and click on search. Then search for spatial join operation and open the spatial join window. 
+
++ Select the target layer with the shapefile that will have the merged properties of the spatial join, and follow the instructions on the video. Remember to choose one_to_one and the option within the match option select Intersect.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/8lhGlQKGl7M" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Change appereance of a map
 
-Simbology
++ Select the feature layer in the Contents pane.
++ On the Appearance tab, in the Drawing group, click Symbology Symbology.
++ In the Symbology pane, on the Vary symbology by attribute tab Vary symbology by attribute, expand the Color heading and do one of the following:
++ Choose a numeric field from the Field menu to vary the symbol color.
++ Write an expression to determine color values. Choose Custom from the Field menu, or click the Set an expression button Set an expression to open the Expression Builder dialog box.
++  Select a color scheme. (When symbolizing polygon feature layers, you can modify the color of the polygon symbol fills or outlines (or both) by the color scheme. 
++ Click the Color scheme options button Color scheme options to choose the target for the color scheme. The target determines which symbol layers of the symbol are affected. 
++ If the source data has changed or been updated, click Refresh values Refresh to update the range of values.
++ Check the Show legend check box to add a representation of the color variation to the layer's legend in both the Contents pane and any legends placed on layouts.
++ To remove the color variable or the normalization field, choose <none> from the Field or Normalization menus.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BSA6IBQySV0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Relate two variables in a bivariate map
 
-Bivariate
+To relate two layers in a bivariate map, follow the instructions on the video:
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/qtS2-ZttkLI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Set map in the layout and adding legend
-
-SetMap
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sD2sfqe-g8Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
