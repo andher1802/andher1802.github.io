@@ -9,8 +9,6 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-This example was modified from the ESRI example "Examine Global Poverty Using UN Sustainable Development Goal". URL: [Reference link](https://www.esri.com/arcgis-blog/products/arcgis-online/mapping/examine-global-poverty-using-un-sustainable-development-goals/)
-
 ## Download data from the canopy website
 
 + You also can find the material for this tutorial in the following link:
