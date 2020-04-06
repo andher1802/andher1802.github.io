@@ -1,0 +1,376 @@
+---
+title: "03-Lesson3"
+author: "Andres Hernandez"
+date: "4/6/2020"
+output: html_document
+---
+# ArcGIS Fundamentals: Spatial Analysis Amazon Basin Deforestation Projectin {#week3}
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Download data from Canopy
+
++ You also can find the material for this tutorial in the following link:
+[Chapter 3](https://drive.google.com/drive/folders/1ABe9m2oxSZwJpCih3mB8a26YV0snAy34?usp=sharing)
+
+## Load layers into ArcMap and Save a project in ArcMap
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TexZP2GvxpM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+After you added the required data from the files downloaded change the style of the shapefiles. 
+
++ The Table Of Contents lists all layers in the map. It also shows the layer's symbology that organize the layers.
+
++ To change the styles of the shaefiles you can right-click on the layer that you want to edit and go to properties, and the tab simbology.
+
++ The Symbol Selector dialog box opens. It includes a list of preset symbols and some symbology options. You'll give the Brazilian States layer a symbol with only an outline, similar to the Amazon Ecoregion layer.
+
++ In the case of Brazilian states select for Fill Color, choose No Color.
+
++ For Outline Width, highlight the existing value of 2.
+
++ For Outline Color, choose yellow.
+
++ The symbology changes. The Brazilian States layer now has only a yellow outline.
+
++ The Amazon Ecoregion layer (the yellow line) is beneath the Brazilian States layer (the white lines). Layers are drawn on the map in their order in the Table Of Contents.
+
+### Change cities symbology
+
++ Reorder Table Of Contents. The Cities layer appears below the basemap layer.
+
++ In the Table Of Contents, drag the cities layer above the other layers.
+
++ It contains points of various colors, each representing a city in Rondônia. Most cities are in deforested areas.
+
++ Locate the Cities layer in the Table Of Contents.
+
++ Unlike the other layers, the Cities layer has four symbols instead of one. Layers can be symbolized based on attribute data. In this case, the attribute is Population_2014. The labels next to each symbol indicate the range of population each symbol represents. The lighter red symbols are for cities with lower populations, while the darker red symbols are for cities with larger populations. You can find the population of each feature using the Identify tool, or you can see the attributes of all features with the layer's Attribute Table.
+
++ In the Table Of Contents, right-click the Cities layer and choose Open Attribute Table.
+
++ Open Attribute Table. In the Attribute Table, attributes are organized into columns, or fields, and features are organized into rows.
+
++ The fields give the name of each city, its 2014 population, its latitude, and its longitude. The OBJECTID and Shape fields are managed by the software. The populations of the 52 cities in Rondônia range between 2,000 and 500,000.
+
++ Close the table.
+
++ Symbolizing the cities by color is okay, but it would be more intuitive if the cities were symbolized by size, with larger symbols indicating larger populations.
+In the Table Of Contents, right-click the Cities layer and choose Properties.
+
++ The Layer Properties dialog box opens. This dialog box includes more symbology options than the Symbol Selector you used earlier.
+
++ At the top of the Layer Properties dialog box, click the Symbology tab.
+
++ The symbols are set by Quantities, which classifies attribute values into ranges and gives each range a unique symbol. Currently, those symbols have graduated colors, but they can be given graduated symbol sizes instead.
+
++ Under Quantities, click Graduated symbols. The symbols retain their ranges and labels, but now have random default graduated symbols. Next, you'll change the size and color of the symbols.
+
++ Click the Template button. The Symbol Selector opens.
+
++ In the list of preset symbols, click Circle 2. Change the color to Arctic White.
+Click OK. The four circles range in size from 4 to 18 points. The smallest symbol is difficult to see. Above the list of symbols and ranges, change the Symbol Size range to be from 8 to 20.
+
++ Symbol Size At the bottom of the Layer Properties dialog box, click OK. On the map, the largest cities tend to be in the middle of the deforested area, although they range in distribution from north to south. Smaller cities tend to be closer to the edge of the deforestation.
+
++ Lastly, you'll change the Population_2014 attribute in the Table Of Contents. Your eventual goal is to share your data as part of a finished map, so renaming the attribute to something more presentable is important.
+
++ In the Table Of Contents, under Cities, click Population_2014 once to select it. Click it a second time to make it editable.
+
++ Rename Population attribute. Type Population (2014) and press Enter. The attribute is renamed in the Table Of Contents. Its name in the Attribute Table remains unchanged.
+
+### Identify tool
++ On the Tools toolbar, click the Identify tool.
+
++ Click any state on the map.
+
++ The state flashes green and the Identify dialog box opens. The Identify dialog box shows the attribute data, or information, for the feature you clicked. Although you can identify states until you find Rondônia, you can use a quicker method to find a feature with a specific attribute.
+
++ Close the Identify dialog box.
+
+### Finding tool
+
+For finding an specific shape on a layer, we can use the find tool.
+
++ Click the Find tool. The Find dialog box opens.
+
++ In the Find dialog box, on the Features tab, type Rondonia in the Find box. Click Find.
+
++ At the bottom of the Find dialog box, a list of matching values appears. The list contains one item called Rondonia. Right-click the Rondonia value and choose Zoom To.
+
++ The map zooms to the Rondônia feature in the Brazilian States layer, highlighted in the following image:
+
++ Close the Find dialog box.
+
+## Select shapes by Attributes
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/I33JjrH1fKw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
++ Use the geodatabase in catalog to add the layers that are shown in the video tutorial (roads)
+
++ In the Catalog window, drag the Roads feature class to the Table Of Contents, below the Brazilian States layer.
+
++ The Roads layer contains a dense network of roads that covers most of the state. The layer doesn't extend past the Amazon Ecoregion boundary. In the Table Of Contents, right-click the Roads layer and choose Open Attribute Table.
+
++ Among the fields are Name and Status. Status shows whether a road is official or unofficial. Unofficial roads do not have names, although official roads might. The number at the bottom of the table reports the total number of features: 27,662. Which roads on the map are official and which are unofficial? You could use graduated symbology options to give each type of a road a unique appearance, or you could use an attribute query to select all features in a layer with a certain attribute. 
+
++ On the ArcMap main menu, click Selection and choose Select By Attributes.
+
++ The Select By Attributes dialog box opens. It has many options and can look complicated at first. You'll become familiar with its interface before you use it.
+
++ In this dialog box, you build a logical expression to determine the attribute by which features will be selected. In the topmost box are the field names in the selected layer. Below it are the logical operators, which define the relationship between two things. To the right of the logical operators is a box that displays the unique values of a field you select, and the bottom box contains the expression.
+
++ Using these options, you'll create an expression to find roads where Status = Official.
+For Layer, choose Roads from the list.
+
++ In the list of fields, double-click Status.
+
++ The word Status appears in the box at the bottom of the dialog box. 
+
++ In the list of logical operators, click the equal sign (=) button.
+
++ An equal sign appears next to the word Status. Next, you'll add the unique value of Official. Next to the list of logical operators, click Get Unique Values. Double-click 'Official' to add it to the query.
+
++ The word Official in single quotation marks appears in the box at the bottom.
+
++ Query At the bottom of the Select By Attributes dialog box, click OK.
+
++ Official roads are selected (highlighted in blue) on the map. 
+
++ Official roads appear to connect municipalities and facilitate travel between population centers. Although they mostly appear in deforested areas, deforestation does not solely occur in places where there are official roads. There appear to be significantly fewer official roads than unofficial roads.
+
++ The ability to see official roads independent of the total road network is useful reference information. However, a selection is not permanent and will be erased if you make another selection or deselect the features. To prevent this, you'll make a new layer based on the selection.
+
++ In the Table Of Contents, right-click the Roads layer, point to Selection, and choose Create Layer From Selected Features.
+
++ The Roads selection layer is created and added to the top of the Table Of Contents.
+On the Tools toolbar, click the Clear Selected Features button.
+
++ The original selection is cleared. It may have the same symbology as the original Roads layer, so you may not be able to see it in the map. In the Table of Contents, click the symbol for the Roads selection layer to open the Symbol Selector. Scroll through the preset symbols and click the Stacked Multi Roadway symbol. Change the color to Orange.
+
++ The official roads cover up the cities. Also, the Roads selection layer should be renamed to better reflect what it shows. In the Table of Contents, click the name of the Roads selection layer to edit it. Change the name to Official Roads.
+
++ Rename layer. Drag the Roads selection layer below the Brazilian States layer and above the original Roads layer.
+
++ Arterial Street. Change the color to Raw Umber.
+
++ The difference between official and unofficial roads is clear. Unfortunately, the unofficial roads still clutter the map. Because the official and unofficial roads are now in separate layers, you can turn off the Roads layer to temporarily hide it while keeping the Official Roads layer visible.
+
++ In the Table Of Contents, uncheck the box next to the Roads layer.
+
++ You can turn the layer back on at any time by checking the box again.
+
+### Add Transparent layers
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DJP3S-av9OA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
++ Use the geodatabase in catalog to add the layers that are shown in the video tutorial (deforested, and protected areas)
+
++ Change the style until you reach a nice-looking style.
+
++ To create a transparent layer, right-click on the layer you want to edit. 
+
++ Go to properties, and click on the display tab.
+
++ increase the transparency value from 0 to 50% (for example).
+
++ Click on Accept.
+
+## Buffer and Cliping Layers
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LQLSc4eczA8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+### Manual selection
+
++ In the Table Of Contents, turn off all layers except the Roads layer and the Imagery basemap.
+
++ To select a sample of the Roads layer, you'll use the Select tool. The Select tool selects features from all selectable layers. Turning off the other layers makes them unable to be selected, ensuring that only features in the Roads layer will be selected. The basemap has no features, so it has nothing to select.
+
++ On the Tools toolbar, click the Select Features tool.
+
++  On the map, draw a box around the northwest portion of the state. The features within the box are selected in the map.
+
++ On the ArcMap main menu, click Selection and choose Zoom To Selected Features.
+
+### Create Buffer
+
++ Next, you'll begin your analysis. To estimate the impact of the proposed road, you'll first determine the impact of existing roads. You'll measure this impact by the percentage of area around roads that is deforested. To find this percentage, you'll create a buffer around your roads selection and compare the buffer's area to the area of deforestation inside the buffer. (Select your own set of roads for the lab assignment)
+
++ In the Geoprocessing menu, click Buffer.
+
++ In the Buffer dialog box, for Input Features, choose Roads.
+
++ For Output Feature Class, confirm that the output location is the Rondônia geodatabase.
+
++ For Distance, in the Linear unit text box, type 5500.
+
++ For Dissolve Type, choose All.
+
++ At the bottom of the Buffer dialog box, click OK.
+
++ The Buffer tool runs. When the process finishes, the result layer is added to the map.
+
+### Clip shapefiles
+
++ Next, you'll find how much deforestation falls within this buffer zone. In the Table Of Contents, drag the Roads_Buffer layer below the Deforested Area layer. Turn on the Deforested Area layer.
+
++ On the Tools toolbar, click the Clear Selected Features button to deselect all features.
+Compare the Deforested Area and Roads_Buffer layers.
+
++ A significant portion of the buffer overlaps with the Deforested Area layer, although not uniformly. The northwestern part of the buffer has many areas that are near roads but have relatively little deforestation.
+
++ To calculate the percentage of the buffer that is deforested, you'll need a layer of deforestation within the buffer. You can create this layer using a geoprocessing tool called Clip. The Clip tool clips the extent of one layer to the extent of another.
+On the ArcMap main menu, click Geoprocessing and choose Clip.
+
++ For Input Features, choose Deforested Area.
+
++ For Clip Features, choose Roads_Buffer.
+
++ For Output Feature Class, confirm that the output will be saved to the Rondônia geodatabase with the name Deforested_Area_Clip.
+
++ Output Feature Class for Clip tool
+
++ Click OK.
+
++ After the tool finishes, the layer is added to the map.
+
+## Add Numerical Fields
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gsPoSjptHSA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
++ In the Table Of Contents, right-click the Deforested_Area_Clip layer and choose Open Attribute Table.
+
++ The layer has two fields of geometry that are automatically created for all polygon feature classes: Shape_Length (perimeter) and Shape_Area.
+
++ Leave the attribute table open and open the Layer Properties dialog box of the Deforested_Area_Clip layer. On the Source tab, under Data Source, scroll down to the projection information.
+
++ Close the Layer Properties dialog box and return to the attribute table.
+
++ In the Table of Contents, right-click the Roads_Buffer layer and choose Open Attribute Table.
+
++ Right-click the Shape_Area value and choose Copy.
+
++ Return to the Deforested_Area_Clip layer attribute table
+
++ On the table's toolbar, click the Table Options button and choose Add Field.
+
++ In the Add Field dialog box, for Name, type Percent_Deforested. For Type, choose Double.
+
++ The field type determines what kind of values the field can have. The Double type allows numerals with decimals.
+
++ Field names can only have text, numerals, and underscores. You can create a field alias that contains other characters. The field alias is displayed in the table, while the actual name is stored in the data.
+
++ Under Field Properties, click the box next to Alias and type Percent Deforested, with no underscore.
+
++ Click OK.
+
++ The Percent Deforested field is added to the end of the attribute table. It has <Null> as its value. <Null> is the default value for new fields and is equivalent to having no value. To add a value, you can edit a table cell directly or create an equation to calculate values.
+
++ Right-click the Percent Deforested field and choose Field Calculator.
+
++ Click Yes to ignore the warning.
+
++ The Field Calculator opens. The Field Calculator is similar to the Select By Attributes dialog box in that it prompts you to build an expression. It gives you standard mathematical operators and functions as well as existing fields in the attribute table to help build your expression. To find the percentage, you'll divide the area of the Deforested_Area_Clip layer by the area of the Roads_Buffer layer and multiply the result by 100.
+
++ In the Field Calculator, in the text box at the bottom of the window, paste the area value that you copied from the Deforested_Area_Clip attribute table.
+
++ In the list of mathematical operations, click the division button.
+
++ Under Fields, double-click Shape_Area.
+
++ The Shape_Area field is added to the equation after the division symbol. To express the value as a percentage, you'll multiply it by 100.
+
++ In the list of operations, click the multiplication button to add it to the equation.
+
++ In the equation, after the multiplication symbol, type 100.
+
++ At the bottom of the Field Calculator, click OK.
+
++ The Percent Deforested field is calculated. Based on the example area values, the value returned was about 43 percent. Your value may differ, but probably not by more than a couple of percentage points.
+
++ You now know the percentage of land within 5.5 kilometers of roads that is deforested. If a new road were built in this sample area, you could predict that a similar percentage of land within 5.5 kilometers of that road would become deforested.
+
++ Now that you have this value, the Deforested_Area_Clip layer is no longer necessary. You'll remove it from your map. You'll keep the Roads_Buffer layer because it has the percentage value in its attributes, but you'll turn off the layer.
+
++ Return to the Rondonia bookmark and save the map.
+
+## Work with raster files
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/4fdvD4Z4X58" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## Create a vector shapefile from a drawing feature
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nD0NbNaG9Ro" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+This step required some practice !!!
++ In the Catalog, right-click the Rondônia geodatabase, point to New, and choose Feature Class.
+
++ For Name, type Planned_Road (with the underscore). For Alias, type Planned Road (with no underscore).
+
++ The name cannot be the same as any other item in the Rondônia geodatabase, so you'll go with Planned Road instead of Proposed Road.
+
++ For Type, choose Line Features.
+
++ At the bottom of the New Feature Class window, click Next.
+
++ Next, you'll choose the feature class's coordinate system. A coordinate system defines positions and measurement values of geographic features on a map. You'll learn more about coordinate systems later in the project. For now, you'll use the coordinate system used by the layers already on your map, which you can quickly choose from the list.
+In the list of coordinate systems, expand the Layers folder. Click South America Albers Equal Area Conic. Click Next.
+
++ The next part of the New Feature Class dialog box allows you to specify XY tolerance. XY tolerance defines how close two coordinates must be to be considered the same coordinate. The default value is fine. Click Next.
+
++ The next parameter is for database storage configuration. You don't have to worry about this parameter.Click Next.
+
++ Lastly, you'll add the attribute fields. The Planned_Road feature class should have attribute fields like the existing Roads feature class. Although you can manually create fields by entering names and data types, you can also import attributes from an existing feature class. Click the Import button.
+
++ In the Browse dialog box, browse to the Rondônia geodatabase. Click the Roads feature class and click Add. Click Finish.
+
++ The Planned_Road feature class is created in the Rondônia geodatabase and added to the map as a layer. It currently has no features.
+
++ In the Table Of Contents, right-click the Planned Road layer, point to Edit Features, and choose Start Editing.
+
++ On the Editor toolbar, click the Create Features tool.
+
++ In the Create Features window, click the Planned Road template.
+
++ Point to some of the features on the map (don't click anything yet).
+
++ Turn off the Protected Forests layer.
+
++ The only visible layers are the basemap, the image, the Cities layer, and all three roads layers.
+
++ On the Editor toolbar, click the Trace tool. Use the scroll wheel on your mouse to zoom to the left endpoint of the proposed road.
+
++ Confirm that Trace is the active tool and click the left endpoint of the proposed road, snapping to where it touches the nearby official road.
+
++ Trace the unofficial road that coincides with the proposed road on the image.
+
++ When you reach the end of the unofficial road that overlaps with the proposed road, click the endpoint to finish tracing.
+
++ After you click, a feature with the current symbology of the Planned Road layer appears on the map. Green squares on the line indicate vertices and the red square indicates the endpoint.
+
++ The next section of the road doesn't coincide with existing features. You'll draw the next section with the Straight Segment tool. On the Editor toolbar, click the Straight Segment tool.
+
++ The pointer changes to crosshairs and is connected to the endpoint by a line.
+At the next bend in the proposed road, click to add a vertex.
+
++ Use the Straight Segment tool to draw the next section of the proposed road, placing a vertex at each bend in the road. Place the last vertex where the proposed road joins up with an unofficial road again.
+
++ For the final section of the proposed road, you'll trace another existing feature.
+Click the Trace tool. On the map, click the last vertex you added and trace until you reach the right endpoint of the proposed road, where it connects to an official road.
+
++ Double-click the endpoint to finish the feature.
+
++ The proposed road feature is selected and the vertices disappear.
+
++ Return to the Proposed Road bookmark and confirm the entire length of the proposed road is digitized.
+
++ On the Editor toolbar, click Editor and choose Save Edits.
+
++ On the Tools toolbar, click Clear Selected Features.
+
+## Compute the projection of deforested area and map the results
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1UHXN4-dHTs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

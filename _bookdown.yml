@@ -1,6 +1,7 @@
 rmd_files: ["index.Rmd",
 "01-Lesson1.Rmd",
 "02-Lesson2.Rmd",
+"03-Lesson3.Rmd",
 ]
   
 delete_merged_file: true
